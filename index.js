@@ -40,11 +40,6 @@ function buildLiteralExp ( value ){
             }
 };
 
-function logError ( msg ){
-    
-    gutil.log( gutil.colors.red( PLUGIN_NAME + ':' ), msg );
-}
-
 function logInfo ( msg ){
 	
     gutil.log( gutil.colors.yellow( PLUGIN_NAME + ': '+msg ) );
@@ -80,15 +75,14 @@ function gulpNameAmd( options ) {
         var code     = file.contents.toString();
         var ast      = esprima.parse( code );
 
-        if( ast.body[0].type != 'ExpressionStatement'  ){
-            logError( 'module must begin with define call ' +  logName );
-            return;
-        }
-        
-        // 找到define 函数调用
-        var defineExp = ast.body[0].expression;
-        if( !isCallExp( defineExp , 'define' ) ){
-            logError( 'cannot find define call in ' +  logName );
+		// 找到define 函数调用
+        var defineExp;
+        if( !ast.body || !ast.body[0] || ast.body[0].type != 'ExpressionStatement' 
+			|| !(defineExp = ast.body[0].expression) 
+			|| !isCallExp( defineExp , 'define' ) ){
+			
+            logInfo( 'skip ' + fileName );
+			callback( null, file );
             return;
         }
         

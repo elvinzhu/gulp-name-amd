@@ -1,6 +1,6 @@
 {
   "name": "gulp-name-amd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "use the file name as the amd module name if none",
   "license": "MIT",
   "repository": {
