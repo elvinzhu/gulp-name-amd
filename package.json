@@ -1,0 +1,48 @@
+{
+  "name": "gulp-name-amd",
+  "version": "1.0.0",
+  "description": "use the file name as the amd module name if none",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elvinzhu/gulp-name-amd.git"
+  },
+  "author": "Elvin zhu <yongyu168@foxmail.com> (https://github.com/elvinzhu/)",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha --timeout 50000"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "amd",
+    "name",
+	"module"
+  ],
+  "dependencies": {
+    "through2": "^2.0.0",
+    "htmlclean": "^2.6.4",
+    "escodegen": "^1.6.1",
+    "esprima": "^2.4.1",
+    "gulp-util": "^3.0.0",
+	"path": "^0.11.14"
+  },
+  "devDependencies": {
+    "through2": "^2.0.0",
+    "htmlclean": "^2.6.4",
+    "escodegen": "^1.6.1",
+    "esprima": "^2.4.1",
+    "gulp-util": "^3.0.0",
+	"path": "^0.11.14"
+  },
+  "bugs": {
+    "url": "https://github.com/elvinzhu/gulp-name-amd/issues",
+    "email": "yongyu168@foxmail.com"
+  },
+  "homepage": "https://github.com/elvinzhu/gulp-name-amd",
+  "main": "index.js"
+}
